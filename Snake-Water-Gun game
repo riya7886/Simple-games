@@ -1,0 +1,76 @@
+# SNAKE WATER GUN GAME
+
+pl1=input("Your name Please:\n")
+print("Computer vs ",pl1)
+list_of_things1=["Snake","Water","Gun"]
+list_of_things=["s","w","g"]
+print("s for Snake:\nw for Water:\ng for Gun:\n")
+import random
+roll=1
+while roll<11:
+    comp_roll = random.choice(list_of_things)
+    player_roll=input("You choose between- snake-water-gun:\n")
+    comp_score=0
+    player_score=0
+    if comp_roll=="s" and player_roll=="w":
+        print("oops! You loose this hand!!!")
+        comp_score = comp_score + 1
+        player_score = player_score
+        print("com-", pl1, ":", comp_roll, "-", player_roll, "score:", comp_score, player_score,
+              "Turn remained:",10 - roll)
+        roll=roll+1
+    elif comp_roll=="s" and player_roll=="g":
+        print("yohoo! You win this hand")
+        player_score = player_score+1
+        comp_score = comp_score
+        print("com-", pl1, ":", comp_roll, "-", player_roll, "score:", comp_score, player_score,
+              "Turn remained:", 10 - roll)
+        roll=roll+1
+    elif  comp_roll=="w" and player_roll=="s":
+        print("yohoo! You win this hand")
+        player_score = player_score + 1
+        comp_score = comp_score
+        print("com-", pl1, ":", comp_roll, "-", player_roll, "score:", comp_score, player_score,
+              "Turn remained:", 10 - roll)
+        roll = roll + 1
+    elif  comp_roll=="g" and player_roll=="s":
+          print("oops! You loose this hand!!!")
+          comp_score=comp_score+1
+          player_score=player_score
+          print("com-", pl1, ":", comp_roll, "-", player_roll, "score:", comp_score, player_score,
+                "Turn remained:", 10 - roll)
+          roll=roll+1
+    elif comp_roll=="g" and player_roll=="w":
+        print("yohoo! You win this hand")
+        player_score = player_score + 1
+        comp_score = comp_score
+        print("com-", pl1, ":", comp_roll, "-", player_roll, "score:", comp_score, player_score,
+              "Turn remained:", 10 - roll)
+        roll = roll + 1
+    elif comp_roll=="w" and player_roll=="g":
+          print("oops! You loose this hand!!!")
+          comp_score=comp_score+1
+          player_score=player_score
+          print("com-", pl1, ":", comp_roll, "-", player_roll, "score:", comp_score, player_score,
+                "Turn remained:", 10 - roll)
+          roll=roll+1
+    elif comp_roll==player_roll:
+        print("No one win this hand...")
+        comp_score = comp_score
+        player_score = player_score
+        print("com-", pl1, ":", comp_roll, "-", player_roll, "score:", comp_score, player_score,
+              "Turn remained:", 10 - roll)
+        roll = roll + 1
+    else:
+        print("Wrong output")
+        print("com-", pl1, ":", comp_roll, "-", player_roll, "score:", comp_score, player_score,
+              "Turn remained:", 10 - roll)
+
+if roll>10:
+    print("GAME OVER")
+if comp_score>player_score:
+    print("Sorry",pl1,"You loose")
+elif player_score>comp_score:
+    print("Congrats,",pl1,"You win the game1")
+else:
+    print("It's a Tie...")
